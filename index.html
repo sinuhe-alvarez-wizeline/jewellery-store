@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Jewels - Fine Jewelry Store</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-shine {
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            background-size: 200% 200%;
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .section {
+            min-height: 100%;
+            padding: 2rem 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="min-h-full bg-gray-50 font-serif">
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20"><!-- Logo -->
+     <div class="flex items-center space-x-3">
+      <div class="logo-shine w-12 h-12 rounded-full flex items-center justify-center">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L8.5 8.5L2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5L12 2zm0 3.5L14.5 9L18 12l-3.5 3L12 18.5L9.5 15L6 12l3.5-3L12 5.5z" />
+       </svg>
+      </div>
+      <div>
+       <h1 id="store-name" class="text-2xl font-bold text-gray-900">Elegant Jewels</h1>
+       <p id="tagline" class="text-sm text-gray-600">Timeless Beauty, Crafted Perfectly</p>
+      </div>
+     </div><!-- Navigation -->
+     <div class="flex space-x-8"><button onclick="showSection('home')" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Home</button> <button onclick="showSection('about')" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">About Us</button> <button onclick="showSection('catalog')" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Catalog</button>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><!-- Home Section -->
+   <section id="home-section" class="section">
+    <div class="text-center py-20">
+     <h2 class="text-5xl font-bold text-gray-900 mb-6">Welcome to Elegant Jewels</h2>
+     <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Discover our exquisite collection of handcrafted jewelry, where each piece tells a story of elegance, passion, and timeless beauty.</p>
+     <div class="flex justify-center space-x-4"><button onclick="showSection('catalog')" class="bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-yellow-700 transition duration-300">Shop Now</button> <button onclick="showSection('about')" class="border-2 border-yellow-600 text-yellow-600 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-600 hover:text-white transition duration-300">Learn More</button>
+     </div>
+    </div><!-- Featured Categories -->
+    <div class="grid md:grid-cols-3 gap-8 py-16">
+     <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+      <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3" /> <path d="M12 1v6m0 10v6m11-7h-6m-10 0H1m15.5-6.5l-4.24 4.24m-8.49 0L7.05 7.05m12.73 12.73l-4.24-4.24m-8.49 0l4.24-4.24" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">Rings</h3>
+      <p class="text-gray-600">Engagement, wedding, and statement rings crafted with precision</p>
+     </div>
+     <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+      <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">Necklaces</h3>
+      <p class="text-gray-600">Elegant chains and pendants for every occasion</p>
+     </div>
+     <div class="text-center p-8 bg-white rounded-xl shadow-lg">
+      <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+       <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-semibold text-gray-900 mb-2">Earrings</h3>
+      <p class="text-gray-600">Stunning studs, hoops, and drops to complement your style</p>
+     </div>
+    </div>
+   </section><!-- About Us Section -->
+   <section id="about-section" class="section hidden">
+    <div class="py-16">
+     <div class="text-center mb-16">
+      <h2 id="about-title" class="text-4xl font-bold text-gray-900 mb-6">About Elegant Jewels</h2>
+      <div class="w-24 h-1 bg-yellow-600 mx-auto mb-8"></div>
+     </div>
+     <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+       <p id="about-description" class="text-lg text-gray-700 mb-6 leading-relaxed">For over three decades, Elegant Jewels has been crafting exceptional jewelry pieces that celebrate life's most precious moments. Our master artisans combine traditional techniques with contemporary design to create timeless pieces that will be treasured for generations.</p>
+       <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+         <div class="w-6 h-6 bg-yellow-600 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+         </div><span class="text-gray-700">Handcrafted with premium materials</span>
+        </div>
+        <div class="flex items-center space-x-3">
+         <div class="w-6 h-6 bg-yellow-600 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+         </div><span class="text-gray-700">Lifetime warranty on all pieces</span>
+        </div>
+        <div class="flex items-center space-x-3">
+         <div class="w-6 h-6 bg-yellow-600 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+         </div><span class="text-gray-700">Custom design services available</span>
+        </div>
+        <div class="flex items-center space-x-3">
+         <div class="w-6 h-6 bg-yellow-600 rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+         </div><span class="text-gray-700">Ethically sourced gemstones</span>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+       <div class="text-center">
+        <div class="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+         <svg class="w-12 h-12 text-yellow-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L8.5 8.5L2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5L12 2zm0 3.5L14.5 9L18 12l-3.5 3L12 18.5L9.5 15L6 12l3.5-3L12 5.5z" />
+         </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Our Promise</h3>
+        <p class="text-gray-600 leading-relaxed">Every piece that leaves our workshop carries with it our commitment to excellence, beauty, and the celebration of your most cherished moments.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Catalog Section -->
+   <section id="catalog-section" class="section hidden">
+    <div class="py-16">
+     <div class="text-center mb-16">
+      <h2 id="catalog-title" class="text-4xl font-bold text-gray-900 mb-6">Our Collection</h2>
+      <div class="w-24 h-1 bg-yellow-600 mx-auto mb-8"></div>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our carefully curated selection of fine jewelry, each piece designed to capture the essence of elegance and sophistication.</p>
+     </div><!-- Product Grid -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Product 1 -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-yellow-600" fill="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3" /> <path d="M12 1v6m0 10v6m11-7h-6m-10 0H1m15.5-6.5l-4.24 4.24m-8.49 0L7.05 7.05m12.73 12.73l-4.24-4.24m-8.49 0l4.24-4.24" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Diamond Solitaire Ring</h3>
+        <p class="text-gray-600 mb-4">Classic 1-carat diamond in 18k white gold setting</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$2,499</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div><!-- Product 2 -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-blue-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sapphire Pendant</h3>
+        <p class="text-gray-600 mb-4">Royal blue sapphire with diamond accents</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$1,299</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div><!-- Product 3 -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-pink-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Rose Gold Earrings</h3>
+        <p class="text-gray-600 mb-4">Elegant drop earrings with pink tourmaline</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$899</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div><!-- Product 4 -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-green-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L8.5 8.5L2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5L12 2zm0 3.5L14.5 9L18 12l-3.5 3L12 18.5L9.5 15L6 12l3.5-3L12 5.5z" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Emerald Tennis Bracelet</h3>
+        <p class="text-gray-600 mb-4">Stunning emeralds in platinum setting</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$3,299</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div><!-- Product 5 -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-purple-600" fill="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3" /> <path d="M12 1v6m0 10v6m11-7h-6m-10 0H1m15.5-6.5l-4.24 4.24m-8.49 0L7.05 7.05m12.73 12.73l-4.24-4.24m-8.49 0l4.24-4.24" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Amethyst Cocktail Ring</h3>
+        <p class="text-gray-600 mb-4">Bold statement ring with cushion-cut amethyst</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$699</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div><!-- Product 6 -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-gray-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pearl Strand Necklace</h3>
+        <p class="text-gray-600 mb-4">Classic Akoya pearls with diamond clasp</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$1,899</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-gray-900 text-white py-12 mt-16">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+     <div>
+      <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+      <p class="text-gray-300 mb-2">📍 123 Jewelry Lane, Diamond District</p>
+      <p class="text-gray-300 mb-2">📞 (555) 123-4567</p>
+      <p class="text-gray-300">✉️ info@elegantjewels.com</p>
+     </div>
+     <div>
+      <h3 class="text-xl font-semibold mb-4">Store Hours</h3>
+      <p class="text-gray-300 mb-2">Monday - Friday: 10am - 7pm</p>
+      <p class="text-gray-300 mb-2">Saturday: 10am - 6pm</p>
+      <p class="text-gray-300">Sunday: 12pm - 5pm</p>
+     </div>
+     <div>
+      <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+      <div class="flex space-x-4"><button class="text-gray-300 hover:text-yellow-400 transition duration-300">Facebook</button> <button class="text-gray-300 hover:text-yellow-400 transition duration-300">Instagram</button> <button class="text-gray-300 hover:text-yellow-400 transition duration-300">Pinterest</button>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+     <p class="text-gray-400">© 2024 Elegant Jewels. All rights reserved.</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            store_name: "Elegant Jewels",
+            tagline: "Timeless Beauty, Crafted Perfectly",
+            about_title: "About Elegant Jewels",
+            about_description: "For over three decades, Elegant Jewels has been crafting exceptional jewelry pieces that celebrate life's most precious moments. Our master artisans combine traditional techniques with contemporary design to create timeless pieces that will be treasured for generations.",
+            catalog_title: "Our Collection"
+        };
+
+        // Show/hide sections
+        function showSection(sectionName) {
+            const sections = ['home-section', 'about-section', 'catalog-section'];
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                if (section === sectionName + '-section') {
+                    element.classList.remove('hidden');
+                } else {
+                    element.classList.add('hidden');
+                }
+            });
+        }
+
+        // Element SDK configuration
+        async function onConfigChange(config) {
+            document.getElementById('store-name').textContent = config.store_name || defaultConfig.store_name;
+            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+            document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+            document.getElementById('about-description').textContent = config.about_description || defaultConfig.about_description;
+            document.getElementById('catalog-title').textContent = config.catalog_title || defaultConfig.catalog_title;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["store_name", config.store_name || defaultConfig.store_name],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["about_title", config.about_title || defaultConfig.about_title],
+                ["about_description", config.about_description || defaultConfig.about_description],
+                ["catalog_title", config.catalog_title || defaultConfig.catalog_title]
+            ]);
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996d3030c3ea07a3',t:'MTc2MTg1MTE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
