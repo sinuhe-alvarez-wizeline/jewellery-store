@@ -6,49 +6,7 @@
   <title>Elegant Jewels - Fine Jewelry Store</title>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        .nav-link {
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            transform: translateY(-2px);
-        }
-        
-        .product-card {
-            transition: all 0.3s ease;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo-shine {
-            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
-            background-size: 200% 200%;
-            animation: shine 3s ease-in-out infinite;
-        }
-        
-        @keyframes shine {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        .section {
-            min-height: 100%;
-            padding: 2rem 0;
-        }
-        
-        .hidden {
-            display: none;
-        }
-    </style>
-  <style>@view-transition { navigation: auto; }</style>
+  <link rel="stylesheet" href="css/styles.css">
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="min-h-full bg-gray-50 font-serif">
@@ -65,13 +23,13 @@
        <p id="tagline" class="text-sm text-gray-600">Timeless Beauty, Crafted Perfectly</p>
       </div>
      </div><!-- Navigation -->
-     <div class="flex space-x-8"><button onclick="showSection('home')" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Home</button> <button onclick="showSection('about')" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">About Us</button> <button onclick="showSection('catalog')" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Catalog</button>
+    <div class="flex space-x-8"><a href="index.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Home</a> <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">About Us</a> <a href="catalog.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Catalog</a>
      </div>
     </div>
    </nav>
   </header>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><!-- Home Section -->
-   <section id="home-section" class="section">
+    <section id="home-section" class="section">
     <div class="text-center py-20">
      <h2 class="text-5xl font-bold text-gray-900 mb-6">Welcome to Elegant Jewels</h2>
      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Discover our exquisite collection of handcrafted jewelry, where each piece tells a story of elegance, passion, and timeless beauty.</p>
@@ -104,8 +62,7 @@
       <p class="text-gray-600">Stunning studs, hoops, and drops to complement your style</p>
      </div>
     </div>
-   </section><!-- About Us Section -->
-   <section id="about-section" class="section hidden">
+    </section>
     <div class="py-16">
      <div class="text-center mb-16">
       <h2 id="about-title" class="text-4xl font-bold text-gray-900 mb-6">About Elegant Jewels</h2>
@@ -153,8 +110,7 @@
       </div>
      </div>
     </div>
-   </section><!-- Catalog Section -->
-   <section id="catalog-section" class="section hidden">
+    </section>
     <div class="py-16">
      <div class="text-center mb-16">
       <h2 id="catalog-title" class="text-4xl font-bold text-gray-900 mb-6">Our Collection</h2>
@@ -274,26 +230,18 @@
             catalog_title: "Our Collection"
         };
 
-        // Show/hide sections
-        function showSection(sectionName) {
-            const sections = ['home-section', 'about-section', 'catalog-section'];
-            sections.forEach(section => {
-                const element = document.getElementById(section);
-                if (section === sectionName + '-section') {
-                    element.classList.remove('hidden');
-                } else {
-                    element.classList.add('hidden');
-                }
-            });
-        }
-
-        // Element SDK configuration
+        // Element SDK configuration with safety checks for missing elements on each page
         async function onConfigChange(config) {
-            document.getElementById('store-name').textContent = config.store_name || defaultConfig.store_name;
-            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
-            document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
-            document.getElementById('about-description').textContent = config.about_description || defaultConfig.about_description;
-            document.getElementById('catalog-title').textContent = config.catalog_title || defaultConfig.catalog_title;
+            const setText = (id, value) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            };
+
+            setText('store-name', config.store_name || defaultConfig.store_name);
+            setText('tagline', config.tagline || defaultConfig.tagline);
+            setText('about-title', config.about_title || defaultConfig.about_title);
+            setText('about-description', config.about_description || defaultConfig.about_description);
+            setText('catalog-title', config.catalog_title || defaultConfig.catalog_title);
         }
 
         function mapToCapabilities(config) {
