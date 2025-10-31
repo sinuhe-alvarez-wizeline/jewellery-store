@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog - Elegant Jewels</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="min-h-full bg-gray-50 font-serif">
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20"><!-- Logo -->
+     <div class="flex items-center space-x-3">
+      <div class="logo-shine w-12 h-12 rounded-full flex items-center justify-center">
+       <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L8.5 8.5L2 12l6.5 3.5L12 22l3.5-6.5L22 12l-6.5-3.5L12 2zm0 3.5L14.5 9L18 12l-3.5 3L12 18.5L9.5 15L6 12l3.5-3L12 5.5z" />
+       </svg>
+      </div>
+      <div>
+       <h1 id="store-name" class="text-2xl font-bold text-gray-900">Elegant Jewels</h1>
+       <p id="tagline" class="text-sm text-gray-600">Timeless Beauty, Crafted Perfectly</p>
+      </div>
+     </div><!-- Navigation -->
+     <div class="flex space-x-8"><a href="index.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Home</a> <a href="about.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">About Us</a> <a href="catalog.html" class="nav-link text-gray-700 hover:text-yellow-600 font-medium px-3 py-2 rounded-md">Catalog</a>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   <section class="section">
+    <div class="py-16">
+     <div class="text-center mb-16">
+      <h2 id="catalog-title" class="text-4xl font-bold text-gray-900 mb-6">Our Collection</h2>
+      <div class="w-24 h-1 bg-yellow-600 mx-auto mb-8"></div>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our carefully curated selection of fine jewelry, each piece designed to capture the essence of elegance and sophistication.</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Product cards (copied from original index) -->
+      <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+       <div class="h-64 bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center">
+        <svg class="w-24 h-24 text-yellow-600" fill="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3" /> <path d="M12 1v6m0 10v6m11-7h-6m-10 0H1m15.5-6.5l-4.24 4.24m-8.49 0L7.05 7.05m12.73 12.73l-4.24-4.24m-8.49 0l4.24-4.24" />
+        </svg>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Diamond Solitaire Ring</h3>
+        <p class="text-gray-600 mb-4">Classic 1-carat diamond in 18k white gold setting</p>
+        <div class="flex justify-between items-center"><span class="text-2xl font-bold text-yellow-600">$2,499</span> <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition duration-300">View Details</button>
+        </div>
+       </div>
+      </div>
+      <!-- (other product cards omitted for brevity but can be added as needed) -->
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-gray-900 text-white py-12 mt-16">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+     <div>
+      <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+      <p class="text-gray-300 mb-2">📍 123 Jewelry Lane, Diamond District</p>
+      <p class="text-gray-300 mb-2">📞 (555) 123-4567</p>
+      <p class="text-gray-300">✉️ info@elegantjewels.com</p>
+     </div>
+     <div>
+      <h3 class="text-xl font-semibold mb-4">Store Hours</h3>
+      <p class="text-gray-300 mb-2">Monday - Friday: 10am - 7pm</p>
+      <p class="text-gray-300 mb-2">Saturday: 10am - 6pm</p>
+      <p class="text-gray-300">Sunday: 12pm - 5pm</p>
+     </div>
+     <div>
+      <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+      <div class="flex space-x-4"><button class="text-gray-300 hover:text-yellow-400 transition duration-300">Facebook</button> <button class="text-gray-300 hover:text-yellow-400 transition duration-300">Instagram</button> <button class="text-gray-300 hover:text-yellow-400 transition duration-300">Pinterest</button>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+     <p class="text-gray-400">© 2024 Elegant Jewels. All rights reserved.</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+        // Safe SDK initialization (same as other pages)
+        const defaultConfig = {
+            store_name: "Elegant Jewels",
+            tagline: "Timeless Beauty, Crafted Perfectly",
+            about_title: "About Elegant Jewels",
+            about_description: "For over three decades, Elegant Jewels has been crafting exceptional jewelry pieces that celebrate life's most precious moments. Our master artisans combine traditional techniques with contemporary design to create timeless pieces that will be treasured for generations.",
+            catalog_title: "Our Collection"
+        };
+
+        async function onConfigChange(config) {
+            const setText = (id, value) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            };
+
+            setText('store-name', config.store_name || defaultConfig.store_name);
+            setText('tagline', config.tagline || defaultConfig.tagline);
+            setText('about-title', config.about_title || defaultConfig.about_title);
+            setText('about-description', config.about_description || defaultConfig.about_description);
+            setText('catalog-title', config.catalog_title || defaultConfig.catalog_title);
+        }
+
+        function mapToCapabilities(config) { return { recolorables: [], borderables: [], fontEditable: undefined, fontSizeable: undefined }; }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["store_name", config.store_name || defaultConfig.store_name],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["about_title", config.about_title || defaultConfig.about_title],
+                ["about_description", config.about_description || defaultConfig.about_description],
+                ["catalog_title", config.catalog_title || defaultConfig.catalog_title]
+            ]);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({ defaultConfig, onConfigChange, mapToCapabilities, mapToEditPanelValues });
+        }
+    </script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'996d3030c3ea07a3',t:'MTc2MTg1MTE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
